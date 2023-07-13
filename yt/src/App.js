@@ -9,7 +9,7 @@ import SearchFeed from './Components/SearchFeed'
 const App = () => {
   return (
     <BrowserRouter>
-    <Box sx={{backgroundColor:'#000000'}}>
+    <Box m={0} p={0} sx={{backgroundColor:'#000000'}}>
     <Navbar/>
     <Routes>
       <Route path='/' exact element ={<Feed/>} />
@@ -23,4 +23,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
