@@ -6,14 +6,14 @@ const Videos = ({ videos}) => {
     console.log(videos)
   return (
     <>
-      <Stack direction="row" flexwrap="wrap" justifyContent="start" gap="2">
+      <Box sx={{width:"100%",display:'flex',alignItems:'center',justifyContent:'center',flexWrap:"wrap"}} >
           {videos.map((item, idx) => (
           <Box key={idx}>
             {item.id.videoId && <VideoCard video={item} />}
             {item.id.channelId && <ChannelCard channelDetail={item} />}
           </Box>
           ))}
-      </Stack>
+      </Box>
     </>
   );
 };
