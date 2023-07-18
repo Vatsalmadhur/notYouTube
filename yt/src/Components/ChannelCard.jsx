@@ -1,8 +1,9 @@
 import React from 'react'
-import {Box, CardContent, CardMedia} from "@mui/material";
+import {Box, CardContent, CardMedia, Typography} from "@mui/material";
 import {Link} from "react-router-dom";
 import channelDetail from "./ChannelDetail";
 import {demoProfilePicture} from "./utils/constants";
+import {CheckCircleOutline} from "@mui/icons-material";
 
 const ChannelCard = () => {
   return (
@@ -16,11 +17,16 @@ const ChannelCard = () => {
             <CardMedia
                 image={channelDetail?.snippet?.thumbnails?.
                     high?.url || demoProfilePicture} alt={channelDetail?.snippet?.title} sx={{ borderRadius: '50%', height: '180px', width:
-                    '180px',mb: 2, border: '1px solid #e3e3e3'}}>
-
-
-            </CardMedia>
+                    '180px',mb: 2, border: '1px solid #e3e3e3'}}/>
                 </CardContent>
+            <Typography sx={{color:"white"}} >lorem ipsum dolor
+            <CheckCircleOutline sx={{color:"red"}}/>
+            </Typography>
+            {channelDetail?.statistics?.subscriberCount &&(
+                <Typography sx={{color:"white"}}>
+                    {parseInt(channelDetail?.statistics?.subscriberCount).toLocaleString()} Subscribers
+                </Typography>
+            )}
         </Link>
 
     </Box>
