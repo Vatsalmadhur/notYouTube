@@ -5,7 +5,7 @@ import channelDetail from "./ChannelDetail";
 import {demoProfilePicture} from "./utils/constants";
 import {CheckCircleOutline} from "@mui/icons-material";
 
-const ChannelCard = () => {
+const ChannelCard = ({channelDetail}) => {
   return (
     <Box
     >
@@ -14,6 +14,7 @@ const ChannelCard = () => {
                 'column', justifyContent: 'center', textAlign:
                 'center', color:
                 '#fff' }}>
+
             <CardMedia
                 image={channelDetail?.snippet?.thumbnails?.
                     high?.url || demoProfilePicture} alt={channelDetail?.snippet?.title} sx={{ borderRadius: '50%', height: '180px', width:

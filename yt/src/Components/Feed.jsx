@@ -10,7 +10,7 @@ const Feed = () => {
 
   useEffect(() => {
     if(!selectedCategory )return
-      console.log("selected", selectedCategory)
+      // console.log("selected", selectedCategory)
     fetchFromApi(
       `search?part=snippet&q=${selectedCategory}&maxResults=50`
     ).then((data) => setVideos(data.data.items));
