@@ -8,11 +8,11 @@ const ChannelDetail = () => {
   const {id}=useParams();
   console.log(channelDetail,videos)
   useEffect(()=>{
-    fetchFromApi(`channels?.part=snippet&id=${id}`)
+    fetchFromApi(`channels?.part=snippet&id=${id}&maxResult=50`)
         .then((data)=>
          setChannelDetail(data?.data?.items[0]))
 // console.log(data))
-    fetchFromApi(`search?channelId=${id}&part=snippet&order=date`)
+    fetchFromApi(`search?channelId=${id}&part=snippet&order=date&maxResults=50`)
         .then((data)=>
             setVideos(data?.data?.items))
     // console.log(id)
