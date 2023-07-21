@@ -9,7 +9,7 @@ const Videos = ({ videos}) => {
   },[videos])
   return (
     <>
-      <Box sx={{width:"100%",display:'flex',alignItems:'center',justifyContent:'center',flexWrap:"wrap"}} >
+      <Box sx={{width:"100%",display:'flex',alignItems:'center',justifyContent:'space-evenly',flexWrap:"wrap"}} >
         
           {videos&& videos.map((item, idx) => (
           <Box key={idx}>
