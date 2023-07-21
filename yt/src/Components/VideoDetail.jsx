@@ -9,19 +9,20 @@ import Videos from "./Videos";
 
 const VideoDetail = () => {
   console.log("VideoDetail");
-  const [videoDetail, setVideoDetail] = useState([]);
-  const [videos, setVideos] = useState(null);
+  const [videoDetail, setVideoDetail] = useState(null);
+  const [relatedVideos, setRelatedVideos] = useState(null);
   const { id } = useParams();
   useEffect(() => {
     fetchFromApi(`videos?part=snippet,statistics&id=${id}`).then((data) =>
       setVideoDetail(data?.data?.items[0])
     );
 
-    fetchFromApi(`search?part=snippet&relatedToVideoId=${id}&type=video`).
+    fetchFromApi(`search?part=snippet&relatedToVideoId=${id}&type=video&maxResults=50`).
     then((data) =>
-    // console.log(data?.data?.items)
-     setVideos(data?.data?.items)
+    // console.log(data.data.items)
+     setRelatedVideos(data.data.items)
     );
+    // console.log(videos);
   }, [id]);
 
   if (!videoDetail?.snippet) return "Loading...";
@@ -31,7 +32,6 @@ const VideoDetail = () => {
   } = videoDetail;
   return (
     <Box minHeight="95vh">
-      jjjj
       <Stack direction={{ xs: "column", md: "row" }}>
         <Box flex="1">
           <Box
@@ -69,7 +69,7 @@ const VideoDetail = () => {
         </Box>
       </Stack>
       <Box>
-        <Videos videos={videos} />
+        <Videos videos={relatedVideos} />
       </Box>
     </Box>
   );

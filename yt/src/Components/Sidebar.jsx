@@ -1,9 +1,8 @@
-import { Box, Button, Stack } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import React from "react";
 import { categories } from "./utils/constants";
 
 const Sidebar = ({ selectedCategory, setSelectedCategory }) => {
-//   const selectedCategory='New';
   return (
     <Stack
       direction="row"
@@ -11,27 +10,43 @@ const Sidebar = ({ selectedCategory, setSelectedCategory }) => {
         overflowY: "hidden",
         height: { sx: "auto", md: "95vh" },
         flexDirection: { md: "column" },
+        width: { sx: "auto", md: "auto" },
       }}
     >
       {categories.map((category) => (
         <Button
-          className="category-btn"
+          // className="category-btn"
           style={{
-            background: category.name === selectedCategory && "#fc1503",
+            background: category.name === selectedCategory && "#e1ad01",
             color: "#ffffff",
+            // border: "2px solid red",
+            borderRadius: "40px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: {sx:'space-evenly',md:'start'},
+            // width: { sx: "50px", md: "150px" },
+            // width:{sx: "300px"},
+            margin: " 5px 10px",
+            minWidth:'115px',
+            height:'40px',
+            
           }}
           key={category.name}
           onClick={() => {
-              setSelectedCategory(()=>category.name);
+            setSelectedCategory(() => category.name);
           }}
         >
-          <Box
-            mr="15px"
-            sx={{ color: category.name === selectedCategory ? "white" : "red" }}
+          <Typography
+            mt="7px"
+            // mr="15px"
+            sx={{
+              color: category.name === selectedCategory ? "white" : "#F0B901",
+              // border:'2px solid red',
+            }}
           >
             {category.icon}
-          </Box>
-          <Box>{category.name}</Box>
+          </Typography>
+          <Box  width='100px' sx={{paddingRight:'10px'}}>{category.name}</Box>
         </Button>
       ))}
     </Stack>

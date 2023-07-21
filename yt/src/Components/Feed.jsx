@@ -16,7 +16,7 @@ const Feed = () => {
     ).then((data) => setVideos(data.data.items));
   }, [selectedCategory]);
 
-
+console.log(videos)
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
       <Box
@@ -33,10 +33,10 @@ const Feed = () => {
         />
       </Box>
 
-      <Box sx={{width:"100vw",border:"2px solid red"}} >
-        <Typography px="10px" variant="h4" color={"red"}>
+      <Box sx={{width:"100vw"}} >
+        <Typography px="10px" pb="10px" variant="h4" color={"#F0B901"}>
           <span style={{ color: "white" }}>{selectedCategory}</span>
-          Videos
+          &nbsp;Videos
         </Typography>
         <Videos videos={videos} />
       </Box>
