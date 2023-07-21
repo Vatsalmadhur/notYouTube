@@ -11,7 +11,8 @@ const Sidebar = ({ selectedCategory, setSelectedCategory }) => {
         height: { sx: "auto", md: "95vh" },
         flexDirection: { md: "column" },
         width: { sx: "auto", md: "auto" },
-        position:"sticky",
+            // border: "2px solid red",
+            bgcolor:"#152238",
       }}
     >
       {categories.map((category) => (

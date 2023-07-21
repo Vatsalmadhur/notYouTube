@@ -17,10 +17,11 @@ const VideoDetail = () => {
       setVideoDetail(data?.data?.items[0])
     );
 
-    fetchFromApi(`search?part=snippet&relatedToVideoId=${id}&type=video&maxResults=50`).
-    then((data) =>
-    // console.log(data.data.items)
-     setRelatedVideos(data.data.items)
+    fetchFromApi(
+      `search?part=snippet&relatedToVideoId=${id}&type=video&maxResults=50`
+    ).then((data) =>
+      // console.log(data.data.items)
+      setRelatedVideos(data.data.items)
     );
     // console.log(videos);
   }, [id]);
@@ -33,12 +34,13 @@ const VideoDetail = () => {
   return (
     <Box minHeight="95vh">
       <Stack direction={{ xs: "column", md: "row" }}>
-        <Box flex="1">
+        <Box flex="1"  sx={{
+            }}>
           <Box
             sx={{
-              width: "100X",
-              position: "sticky",
-              top: "86px",
+              width: "70%",
+              // position: "sticky",
+              // top: "86px",
               border: "2px solid red",
             }}
           >
@@ -46,6 +48,7 @@ const VideoDetail = () => {
               url={`https://www.youtube.com/watch?v=${id}`}
               className="reactPlayer"
               controls
+             
             />
             <Typography sx={{ color: "white" }} variant="h6">
               {title}
@@ -69,8 +72,8 @@ const VideoDetail = () => {
         </Box>
       </Stack>
       <Box>
-        <Videos videos={relatedVideos} />
       </Box>
+        <Videos videos={relatedVideos} />
     </Box>
   );
 };

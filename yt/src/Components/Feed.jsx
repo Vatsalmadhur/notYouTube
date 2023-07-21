@@ -15,7 +15,7 @@ const Feed = () => {
     ).then((data) => setVideos(data.data.items));
   }, [selectedCategory]);
 
-  console.log(videos);
+  // console.log(videos);
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" }}}>
       <Box
@@ -23,6 +23,9 @@ const Feed = () => {
           height: { sx: "auto", md: "92vh" },
           borderRight: "1px solid white",
           px: { sx: 0, md: 2 },
+          position:"sticky",
+          top:"85px",
+          zIndex:3
         }}
         width="auto"
       >
