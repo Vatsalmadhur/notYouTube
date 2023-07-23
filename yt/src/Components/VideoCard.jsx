@@ -16,13 +16,14 @@ const VideoCard = ({
     snippet,
   },
 }) => {
+  console.log(snippet.title);
   return (
     <Card
       sx={{
         width: "300px",
-        height: "350px",
+        height: "300px",
         // border: "1px solid #eac400",
-        margin: "20px",
+        marginY: "10px ",
         background: "#ffffff4d",
         boxShadow: "0 8px 32px 0 #1f26875e",
         backdropFilter: "blur(2px)",
@@ -31,7 +32,7 @@ const VideoCard = ({
         // border: "1px solid #1f26875e",
       }}
     >
-      <Link to={videoId ? `/videos/${videoId}` : demoVideoUrl}>
+      <Link to={videoId ? `/videos/${videoId}` : demoVideoUrl} style={{ }}>
         <CardMedia
           image={snippet?.thumbnails?.high?.url}
           alt={snippet?.title}
@@ -40,7 +41,14 @@ const VideoCard = ({
       </Link>
       <CardContent sx={{ height: "100px", margin: 0, padding: 0 }}>
         <Link to={videoId ? `/videos/${videoId}` : demoVideoUrl}>
-          <Typography color={"white"} sx={{paddingLeft:'5px',fontSize:'1.2rem'}}>
+          <Typography
+            color={"white"}
+            sx={{
+              paddingLeft: "5px",
+              fontSize: "1.2rem",
+              fontFamily: "Raleway, sans-serif",
+            }}
+          >
             {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
           </Typography>
         </Link>
@@ -51,9 +59,19 @@ const VideoCard = ({
               : demoChannelUrl
           }
         >
-          <Typography color={"white"} sx={{paddingLeft:'5px',pt:"10px",fontSize:'0.8rem'}}>
+          <Typography
+            color={"white"}
+            sx={{
+              paddingLeft: "5px",
+              pt: "10px",
+              fontSize: "0.8rem",
+              fontFamily: "Raleway, sans-serif",
+            }}
+          >
             {snippet?.channelTitle || demoChannelTitle}
-<CheckCircleOutline sx={{ color: "#eac400",height:"18px",position:'absolute'}} />
+            <CheckCircleOutline
+              sx={{ color: "#eac400", height: "18px", position: "absolute" }}
+            />
           </Typography>
         </Link>
       </CardContent>

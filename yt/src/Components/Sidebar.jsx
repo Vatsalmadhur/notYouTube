@@ -43,12 +43,13 @@ const Sidebar = ({ selectedCategory, setSelectedCategory }) => {
             // mr="15px"
             sx={{
               color: category.name === selectedCategory ? "white" : "#F0B901",
+              
               // border:'2px solid red',
             }}
           >
             {category.icon}
           </Typography>
-          <Box  width='100px' sx={{paddingRight:'10px'}}>{category.name}</Box>
+          <Box  width='100px' sx={{paddingRight:'10px',fontFamily: 'Raleway, sans-serif',fontWeight:700}}>{category.name}</Box>
         </Button>
       ))}
     </Stack>

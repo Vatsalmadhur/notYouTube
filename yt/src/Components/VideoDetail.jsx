@@ -34,23 +34,24 @@ const VideoDetail = () => {
   return (
     <Box minHeight="95vh">
       <Stack direction={{ xs: "column", md: "row" }}>
-        <Box flex="1"  sx={{
-            }}>
+        <Box flex="1" sx={{}}>
           <Box
+            pl="30px"
             sx={{
-              width: "70%",
-              // position: "sticky",
-              // top: "86px",
-              border: "2px solid red",
+              width: "auto",
+              position: "sticky",
+              top: "86px",
+              // border: "2px solid red",
             }}
           >
             <ReactPlayer
+              width="65vw"
+              height="60vh"
               url={`https://www.youtube.com/watch?v=${id}`}
               className="reactPlayer"
               controls
-             
             />
-            <Typography sx={{ color: "white" }} variant="h6">
+            <Typography sx={{ color: "white", fontSize: "1.7rem" }}>
               {title}
             </Typography>
             <Link to={`/channel/${channelId}`}>
@@ -60,7 +61,7 @@ const VideoDetail = () => {
               </Typography>
             </Link>
 
-            <Typography variant="body1" sx={{ opacity: 0.7, color: "#fff" }}>
+            <Typography sx={{ opacity: 0.7, color: "#fff", fontSize: "1rem" }}>
               {" "}
               {parseInt(viewCount).toLocaleString()} views
             </Typography>
@@ -70,10 +71,10 @@ const VideoDetail = () => {
             </Typography>
           </Box>
         </Box>
-      </Stack>
-      <Box>
+      <Box width="auto">
+      <Videos videos={relatedVideos} />
       </Box>
-        <Videos videos={relatedVideos} />
+      </Stack>
     </Box>
   );
 };

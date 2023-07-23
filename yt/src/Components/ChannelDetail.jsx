@@ -4,7 +4,7 @@ import fetchFromApi from "./utils/fetchFromApi";
 import { Box } from "@mui/material";
 import { lightBlue } from "@mui/material/colors";
 import ChannelCard from "./ChannelCard";
-import Videos from './Videos'
+import Videos from "./Videos";
 
 const ChannelDetail = () => {
   const [channelDetail, setChannelDetail] = useState(null);
@@ -22,13 +22,38 @@ const ChannelDetail = () => {
     // console.log(id)
   }, [id]);
   return (
-    <Box sx={{ minHeight: "95vh" }}>
+    <>
+      <Box sx={{ backgroundColor: "#f0ebeb", height: "300px", display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+          fontSize:{sm:"1rem",md:"100px"},
+          letterSpacing:{xs:"15px",md:"35px"},
+          fontFamily:"Merriweather ",
+          color:'#363636' }}>
+          {channelDetail?.snippet?.title}
+      </Box>
       <Box
-        sx={{ backgroundColor: "#ffffff", height: "300px", zIndex: 10 }}
-      ></Box>
-      <ChannelCard channelDetail={channelDetail}/>
-      <Videos videos={videos}/>
-    </Box>
+        sx={{
+          minHeight: "95vh",
+          // border: "2px solid red",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+        }}
+      >
+        <Box
+          sx={{
+            position: "relative",
+            top: "-100px",
+          }}
+        >
+          <ChannelCard channelDetail={channelDetail} />
+        </Box>
+        <Videos videos={videos} />
+      </Box>
+    </>
   );
 };
 

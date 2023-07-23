@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Flex, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import Sidebar from "./Sidebar";
 import Videos from "./Videos";
 import fetchFromApi from "./utils/fetchFromApi";
@@ -36,7 +36,7 @@ const Feed = () => {
       </Box>
 
       <Box sx={{ width: "100vw" }}>
-        <Typography px="10px" pb="10px" variant="h4" color={"#F0B901"}>
+        <Typography px="10px"   color={"#F0B901"} fontFamily="Merriweather" fontSize="3rem">
           <span style={{ color: "white" }}>{selectedCategory}</span>
           &nbsp;Videos
         </Typography>

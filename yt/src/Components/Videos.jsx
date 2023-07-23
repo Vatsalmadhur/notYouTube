@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Box, Stack } from "@mui/material";
 import VideoCard from "./VideoCard";
 import ChannelCard from "./ChannelCard";
-const Videos = ({ videos}) => {
+const Videos = ({ videos,width}) => {
   // if(videos==null) return;
   useEffect(()=>{
     console.log(videos);
