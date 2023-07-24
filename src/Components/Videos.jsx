@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import { Box, Stack } from "@mui/material";
+import { Box } from "@mui/material";
 import VideoCard from "./VideoCard";
 import ChannelCard from "./ChannelCard";
 const Videos = ({ videos,width}) => {
   // if(videos==null) return;
   useEffect(()=>{
-    console.log(videos);
+    // console.log(videos);
   },[videos])
   return (
     <>
