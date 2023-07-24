@@ -20,7 +20,7 @@ const VideoDetail = () => {
     fetchFromApi(
       `search?part=snippet&relatedToVideoId=${id}&type=video&maxResults=50`
     ).then((data) =>
-      // console.log(data.data.items)
+      // console.log(data)
       setRelatedVideos(data.data.items)
     );
     // console.log(videos);
