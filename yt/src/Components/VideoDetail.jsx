@@ -8,7 +8,7 @@ import { CheckCircleOutline } from "@mui/icons-material";
 import Videos from "./Videos";
 
 const VideoDetail = () => {
-  console.log("VideoDetail");
+  // console.log("VideoDetail");
   const [videoDetail, setVideoDetail] = useState(null);
   const [relatedVideos, setRelatedVideos] = useState(null);
   const { id } = useParams();
@@ -36,25 +36,28 @@ const VideoDetail = () => {
       <Stack direction={{ xs: "column", md: "row" }}>
         <Box flex="1" sx={{}}>
           <Box
-            pl="30px"
+            // px="30px"
             sx={{
               width: "auto",
               position: "sticky",
               top: "86px",
+              paddingX:{xs:'5px',md:'30px'}
               // border: "2px solid red",
             }}
           >
+            <Box sx={{width:{xs:'100%',md:'65vw'},height:{xs:'300px',md:'60vh'}}} >
             <ReactPlayer
-              width="65vw"
-              height="60vh"
+              width="100%"
+              height="100%"
               url={`https://www.youtube.com/watch?v=${id}`}
               className="reactPlayer"
               controls
             />
+            </Box>
             <Typography sx={{ color: "white", fontSize: "1.7rem" }}>
               {title}
             </Typography>
-            <Link to={`/channel/${channelId}`}>
+            <Link to={`/channel/${channelId}`} style={{textDecoration:'none'}}>
               <Typography variant="h6" color="#fff">
                 {channelTitle}
                 <CheckCircleOutline color="red" />

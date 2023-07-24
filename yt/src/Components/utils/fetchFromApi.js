@@ -19,7 +19,7 @@ async function fetchFromApi(url) {
     return { data };
     // console.log(response.data);
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 }
 export default fetchFromApi;

@@ -15,7 +15,7 @@ const ChannelCard = ({ channelDetail }) => {
       width: "250px",
       height:"auto",
     }}>
-      <Link to={`/channel/${channelDetail?.id?.channelId}`}>
+      <Link to={`/channel/${channelDetail?.id?.channelId}`} style={{ textDecoration:'none'}}>
         <CardContent
           sx={{
             display: "flex",

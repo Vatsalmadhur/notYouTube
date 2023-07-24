@@ -32,7 +32,7 @@ const VideoCard = ({
         // border: "1px solid #1f26875e",
       }}
     >
-      <Link to={videoId ? `/videos/${videoId}` : demoVideoUrl} style={{ }}>
+      <Link to={videoId ? `/videos/${videoId}` : demoVideoUrl} style={{ textDecoration:'none' }}>
         <CardMedia
           image={snippet?.thumbnails?.high?.url}
           alt={snippet?.title}
@@ -40,7 +40,7 @@ const VideoCard = ({
         />
       </Link>
       <CardContent sx={{ height: "100px", margin: 0, padding: 0 }}>
-        <Link to={videoId ? `/videos/${videoId}` : demoVideoUrl}>
+        <Link to={videoId ? `/videos/${videoId}` : demoVideoUrl}  style={{textDecoration:'none'}}>
           <Typography
             color={"white"}
             sx={{
@@ -58,6 +58,7 @@ const VideoCard = ({
               ? `/channel/${snippet?.channelId}`
               : demoChannelUrl
           }
+          style={{textDecoration:'none'}}
         >
           <Typography
             color={"white"}
