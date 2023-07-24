@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import {Box} from '@mui/material'
-import {BrowserRouter, Route,Routes} from 'react-router-dom'
+import {HashRouter, Route,Routes} from 'react-router-dom'
 import Navbar from './Components/Navbar'
 import Feed from './Components/Feed'
 import ChannelDetails from './Components/ChannelDetail'
@@ -9,7 +9,7 @@ import VideoDetails from './Components/VideoDetail'
 import SearchFeed from './Components/SearchFeed'
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
     <Box m={0} p={0} sx={{backgroundColor:'#152238'}}>
     <Navbar/>
     <Routes>
@@ -20,7 +20,7 @@ const App = () => {
 
     </Routes>
     </Box>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
