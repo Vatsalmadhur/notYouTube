@@ -36,7 +36,7 @@ const Feed = () => {
       </Box>
 
       <Box sx={{ width: "100vw" }}>
-        <Typography px="10px"   color={"#F0B901"} fontFamily="Merriweather" fontSize="3rem">
+        <Typography px="10px"   color={"#F0B901"} fontFamily="Merriweather" sx={{fontSize:{xs:'2.5rem',md:'3rem'}}}>
           <span style={{ color: "white" }}>{selectedCategory}</span>
           &nbsp;Videos
         </Typography>
