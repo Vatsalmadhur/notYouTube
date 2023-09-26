@@ -12,7 +12,7 @@ notYouTube or !yt used the Rapid API service to render the data (videos) directl
   
 # Deployment
 Deployed at github pages.
-Deployment link : https://madhurvatsal.xyz/notYouTube/
+Deployment link : https://vatsalmadhur.github.io/notYouTube/
 
 # Getting Started with Create React App
 
